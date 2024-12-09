@@ -1,6 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-import Card from "@/components/RecipeCard.vue";
+import RecipeCard from "@/components/RecipeCard.vue";
+
+// init store
+import { recipes } from './data/recipes';
+import { store } from './store/store';
+import Recipe from './class/Recipe';
+recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe.time, recipe.difficulty)));
 </script>
 
 <template>
@@ -28,7 +34,7 @@ import Card from "@/components/RecipeCard.vue";
     </nav>
   </header>
   <main>
-    <Card />
+    <RecipeCard :recipe="recipe" v-for="recipe in store.getRecipes()"/>
   </main>
   <footer>
   </footer>
