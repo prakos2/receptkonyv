@@ -17,5 +17,3 @@ npm run dev
 ```sh
 npm run build
 ```
-# receptkonyv
-# receptkonyv
