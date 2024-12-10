@@ -7,6 +7,7 @@ import Search from "@/components/Search.vue";
 import { recipes } from './data/recipes';
 import { store } from './store/store';
 import Recipe from './class/Recipe';
+import {badges} from "@/data/badges.js";
 recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe.time, recipe.difficulty, recipe.img)));
 </script>
 
@@ -37,9 +38,14 @@ recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe
   <main>
     <Search/>
     <div class="container">
-      <div class="row">
-        <div class="col-4 pe-5 pb-5" v-for="recipe in store.getRecipes()">
+      <div class="row justify-content-between">
+        <div class="col-12 col-md-6 col-lg-4 pe-md-5 pb-5 d-flex justxify-content-center" v-for="recipe in store.getRecipes()">
           <RecipeCard :recipe="recipe"/>
+        </div>
+        <div class="justify-content-center align-items-center">
+          <div class="col text-center">
+            <h1 class="p-5">Nincs találat!</h1>
+          </div>
         </div>
       </div>
     </div>
