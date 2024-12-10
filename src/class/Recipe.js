@@ -19,6 +19,7 @@ export default class Recipe
         this.getTime = this.getTime.bind(this);
         this.getDifficulty = this.getDifficulty.bind(this);
         this.getImg = this.getImg.bind(this);
+        this.getImgURL = this.getImgURL.bind(this);
     }
 
     getId() {return this.#id}
@@ -26,6 +27,9 @@ export default class Recipe
     getTime() {return this.#time}
     getDifficulty() {return this.#difficulty}
     getImg() {return this.#img}
+    getImgURL() {
+        return new URL(this.getImg(), import.meta.url).href
+    }
 
     setId(id) {this.#id = id}
     setTitle(title) {this.#title = title}
