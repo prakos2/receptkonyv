@@ -39,7 +39,7 @@ recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe
     <div class="container">
       <div class="row">
         <div class="col-4 pe-5 pb-5" v-for="recipe in store.getRecipes()">
-          <RecipeCard :recipe="recipe"/>
+          <RecipeCard :recipe="recipe" :v-if="!store.searchFilter.getIds().includes(recipe.getId())" v-for="recipe in store.getRecipes()"/>
         </div>
       </div>
     </div>
