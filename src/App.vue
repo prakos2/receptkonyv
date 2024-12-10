@@ -6,7 +6,7 @@ import RecipeCard from "@/components/RecipeCard.vue";
 import { recipes } from './data/recipes';
 import { store } from './store/store';
 import Recipe from './class/Recipe';
-recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe.time, recipe.difficulty)));
+recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe.time, recipe.difficulty, recipe.img)));
 </script>
 
 <template>

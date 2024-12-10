@@ -5,11 +5,14 @@ import { badgeColors } from '@/data/badgeColors';
 const props = defineProps({
   recipe: Recipe
 });
+const getImgURL = (imgURL) => {
+  return new URL(imgURL, import.meta.url).href
+}
 </script>
 
 <template>
   <div class="card" style="width: 301px;">
-    <img src="../assets/palacsinta.jpg" class="card-img-top" alt="...">
+    <img :src="getImgURL(recipe.getImg())" class="card-img-top" alt="...">
     <div class="card-body">
       <h3 class="card-title mb-3">{{ recipe.getTitle() }}</h3>
       <h6 class="card-subtitle mb-4 text-body-secondary">Elkészítési idő: {{ recipe.getTime() }} perc</h6>
