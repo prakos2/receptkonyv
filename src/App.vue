@@ -2,17 +2,17 @@
 import {ref} from 'vue'
 import RecipeCard from "@/components/RecipeCard.vue";
 import Search from "@/components/Search.vue";
-
 // init store
 import {recipes} from './data/recipes';
 import {store} from './store/store';
 import Recipe from './class/Recipe';
-import {badges} from "@/data/badges.js";
+import Modal from "@/components/Modal.vue";
 
 recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe.time, recipe.difficulty, recipe.img)));
 </script>
 
 <template>
+  <Modal/>
   <div class="container d-flex flex-column align-items-center justify-content-center">
     <div class="row w-100 ps-lg-5 ms-lg-5">
       <header>
@@ -31,7 +31,7 @@ recipes.map(recipe => store.addRecipe(new Recipe(recipe.id, recipe.title, recipe
                   <a class="nav-link active" aria-current="page" href="#">Receptek</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Új recept</a>
+                  <a class="nav-link" aria-current="page" data-bs-toggle="modal" data-bs-target="#newRecipeModal">Új recept</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Kedvencek</a>

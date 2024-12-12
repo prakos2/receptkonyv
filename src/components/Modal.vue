@@ -4,7 +4,7 @@ import {badges} from "@/data/badges.js";
 </script>
 
 <template>
-  <div class="modal" tabindex="-1">
+  <div class="modal" tabindex="-1" id="newRecipeModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
