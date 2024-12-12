@@ -1,12 +1,12 @@
-import CardSearchFilter from "@/class/CardSearchFilter";
-import { reactive } from "vue";
+import { ref, reactive } from "vue";
 export const store = reactive({
-    recipes: [],
-    searchFilter: new CardSearchFilter(),
+    recipes: ref([]),
+    searchFilter: {
+        title: ref(""),
+        difficulty: ref(""),
+        sort: ref(""),
+    },
     addRecipe(recipe) {
         this.recipes.push(recipe);
     },
-    getRecipes() {
-        return this.recipes;
-    }
 })

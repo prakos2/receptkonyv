@@ -31,9 +31,39 @@ export default class Recipe
         return new URL(this.getImg(), import.meta.url).href
     }
 
-    setId(id) {this.#id = id}
-    setTitle(title) {this.#title = title}
-    setTime(time) {this.#time = time}
-    setDifficulty(difficulty) {this.#difficulty = difficulty}
-    setImg(img) {this.#img = img}
+    setId(id) {
+        if (typeof id === 'number') {
+            this.#id = id;
+        } else {
+            throw new Error('id must be a number');
+        }
+    }
+    setTitle(title) {
+        if (typeof title === 'string') {
+            this.#title = title;
+        } else {
+            throw new Error('title must be a string');
+        }
+    }
+    setTime(time) {
+        if (typeof time === 'number') {
+            this.#time = time;
+        } else {
+            throw new Error('time must be a number');
+        }
+    }
+    setDifficulty(difficulty) {
+        if (typeof difficulty === 'string') {
+            this.#difficulty = difficulty;
+        } else {
+            throw new Error('difficulty must be a string');
+        }
+    }
+    setImg(img) {
+        if (typeof img === 'string') {
+            this.#img = img;
+        } else {
+            throw new Error('img must be a string');
+        }
+    }
 }
