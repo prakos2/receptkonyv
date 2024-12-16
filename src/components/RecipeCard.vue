@@ -47,12 +47,11 @@ img {
 .card:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(to top , rgba(0,128,0,0.5), rgba(255,255,255,1));
 
 
 
 }
 .card:hover .diff {
-  filter: brightness(150%);
+  filter: brightness(120%);
 }
 </style>
